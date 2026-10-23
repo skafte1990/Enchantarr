@@ -1,5 +1,4 @@
 # Polisharr
-# Polisharr
 
 Official releases and installation guide. This repository contains documentation and downloads only, no source code.
 
