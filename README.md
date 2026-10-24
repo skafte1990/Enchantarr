@@ -16,6 +16,32 @@ Replaces `mkvpriority`.
 
 ## Running
 
+### Quick start (Proxmox LXC, no Docker)
+
+On your Proxmox host (node → Shell), run:
+
+```bash
+COMMUNITY_SCRIPTS_URL=https://raw.githubusercontent.com/skafte1990/DevScripts/enchantarr bash -c "$(curl -fsSL https://raw.githubusercontent.com/skafte1990/DevScripts/enchantarr/ct/enchantarr.sh)"
+```
+
+Choose **Default Install**. This creates a privileged Debian 12 container (4 cores, 4 GB RAM,
+16 GB disk, GPU passthrough enabled), installs ffmpeg, mkvtoolnix, the GPU drivers and the app
+from this repository's releases, and starts the service on port 8000.
+
+Then add your folders as bind mounts. The path **inside the container must be identical to the
+path Radarr and Sonarr use** (see below), for example:
+
+```bash
+pct set <CTID> -mp0 /host/movies,mp=/movies
+pct set <CTID> -mp1 /host/tv,mp=/tv
+pct set <CTID> -mp2 /host/downloads,mp=/downloads
+pct reboot <CTID>
+```
+
+Update from the container's console with `update`. Settings live in `/etc/enchantarr.env`, data in
+`/data`. These scripts use the community-scripts installer framework but are not part of the
+official community-scripts catalogue.
+
 Quick start (Docker Compose):
 
 ```yaml
