@@ -1,5 +1,7 @@
 # Enchantarr
 
+![Enchantarr](https://raw.githubusercontent.com/skafte1990/Enchantarr/main/assets/enchantarr-banner.png)
+
 Official releases and installation guide. This repository contains documentation and downloads only, no source code.
 
 Enchantarr watches your Radarr and Sonarr queues and, before a download is imported into
