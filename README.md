@@ -14,6 +14,15 @@ torrents are never at risk.
 
 Replaces `mkvpriority`.
 
+## In memory of Hef
+
+Enchantarr began life as Trimarr, built together with my friend Hef. He was my best friend
+throughout my entire life. He passed away in October 2026, far too soon. This project carries
+his work, his ideas and his name in its history, and it exists because of the time we spent
+building it side by side.
+
+Rest in peace, Hef. Thank you for everything.
+
 ## Running
 
 ### Quick start (Proxmox LXC, no Docker)
