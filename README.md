@@ -81,10 +81,11 @@ Environment variables:
 - `ENCHANTARR_SECRET_KEY` — random string used to sign session cookies. If omitted, one
   is generated automatically and persisted to `/data/secret_key` on first boot.
 - `ENCHANTARR_STAGING_DIR` — where Enchantarr writes its working copy of a file while
-  processing it. Defaults to `/downloads/.trimarr-staging`. Only change this if your
+  processing it. Defaults to `/downloads/.enchantarr-staging`. Only change this if your
   shared downloads mount inside the container isn't `/downloads` — see below for why.
 
-(Older `TRIMARR_*` names for these variables still work.)
+(Variable prefixes used by earlier releases still work, and an install from an earlier release keeps its
+database and staging folder: both are renamed automatically on first start.)
 
 Mount `/data` for the SQLite database and app secret (Enchantarr-private, doesn't need to
 be visible to anything else).
@@ -99,7 +100,7 @@ hands that staging file's path to Radarr/Sonarr's Manual Import API. If Radarr/S
 don't have that exact path mounted too, they won't be able to find the staged file and
 the import will fail. Nothing needs to be mounted for Enchantarr's staging copies
 specifically — they live in a hidden subfolder of the same downloads mount
-(`.trimarr-staging`) and are deleted again once each job finishes, successfully or not.
+(`.enchantarr-staging`) and are deleted again once each job finishes, successfully or not.
 
 **Before-import mode needs Radarr/Sonarr to never import anything on their own** —
 Enchantarr's own Manual Import call must be the only way a file ever gets imported, or
